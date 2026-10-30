@@ -1,0 +1,17 @@
+{
+  "site_name": "Where’s My Cert? Find the distrusted eMudhra certificates | Spice Labs",
+  "brand_name": "Spice Labs",
+  "site_description": "Find the distrusted eMudhra and emSign certificates in your VM disk images, firmware and container images. Surveyor builds a CBOM of each, with no source code.",
+  "site_url": "https://wheresmycert.spicelabs.io",
+  "site_domain": "wheresmycert.spicelabs.io",
+  "ga_measurement_id": "G-7P7T82FNV6",
+  "video": {
+    "id": "FuH4BdkyLW0",
+    "docs_video": "wheres-my-cert",
+    "name": "Where’s my cert? Surveyor OT Pro finds the distrusted eMudhra certificates",
+    "description": "Surveyor OT Pro reads three VM disk images on a machine with no network, builds a CBOM of each, and finds the distrusted emSign root and two of the banned eMudhra intermediates by their SHA-256 fingerprints. It needs no source code.",
+    "upload_date": "2026-10-21",
+    "duration": "PT1M5S",
+    "thumbnail": "/images/wheres-my-cert-video.jpg"
+  }
+}

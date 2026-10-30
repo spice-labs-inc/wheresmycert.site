@@ -1,0 +1,144 @@
+{
+  "blocks": [
+    {
+      "type": "hero",
+      "title": "Where’s My Cert?",
+      "body": "Eight eMudhra intermediate certificates were issued with private keys that anyone can recover, and browsers no longer trust them. Spice Labs Surveyor finds every copy in the built software you run, with no source code needed.\n\n{{< youtube id=\"FuH4BdkyLW0\" title=\"Where’s my cert? Surveyor OT Pro finds the distrusted eMudhra certificates\" poster=\"/images/wheres-my-cert-video.jpg\" docs-video=\"wheres-my-cert\" >}}",
+      "cta": { "label": "Find your certificates", "url": "mailto:sales@spicelabs.io" }
+    },
+    {
+      "type": "content",
+      "variant": "center",
+      "title": "Find every copy of the eMudhra certificates",
+      "body": "On October 17, 2026, a researcher reported that eight eMudhra intermediate certificates were generated with private keys anyone can compute from the public certificates. With those keys, anyone can issue a certificate for any website that chains to a trusted root. Chrome blocked the intermediates within two hours. Firefox, Android, Apple and Microsoft followed over the next three days, and Chrome removes the emSign ECC Root CA - G3 from its root store on October 27.\n\nBrowsers updated on their own. Servers, containers, appliances and OT devices carry their own copies of trusted roots, and many of them never check revocation. Each of those copies keeps trusting the emSign root until someone finds it and replaces it.\n\nIn the video, Surveyor OT Pro reads three virtual machine disk images on a machine with no network. It builds a CBOM, a cryptographic bill of materials, for each image, and a search of those CBOMs finds the distrusted emSign root and two of the banned intermediates by their SHA-256 fingerprints. It needs no source code and uploads nothing."
+    },
+    {
+      "type": "quote",
+      "body": "How long did it take you to find every copy of the bad certificate?"
+    },
+    {
+      "type": "steps",
+      "items": [
+        {
+          "label": "Step 01",
+          "title": "Point Surveyor at what you run",
+          "text": "Give Surveyor the built software: VM disk images, firmware, container images and application builds, or a whole artifact repository. It reads qcow2, VMDK, VHD and raw disks, and it opens the file systems, archives and container images inside them.",
+          "image": "/images/Step01Cert.png"
+        },
+        {
+          "label": "Step 02",
+          "title": "Build a CBOM of each one",
+          "text": "Surveyor writes a CycloneDX CBOM for every artifact it reads. Each certificate it finds is listed with its subject, issuer, expiry date, SHA-256 fingerprint and the path to the file that holds it.",
+          "image": "/images/Step02Cert.png"
+        },
+        {
+          "label": "Step 03",
+          "title": "Search for the fingerprints",
+          "text": "Search the CBOMs for the fingerprints of the distrusted certificates. Every match names the image that carries one and where inside that image it sits.",
+          "image": "/images/Step03Cert.png"
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "variant": "center",
+      "title": "The next one is coming",
+      "body": "Weak keys made these certificates forgeable this month. Large quantum computers will make the RSA and elliptic-curve keys behind today’s certificates and code signatures forgeable too, and every one of them will need the same search. A CBOM of everything you run turns each of those events into a search for a list of fingerprints, and it is the inventory that post-quantum migration plans start from."
+    },
+    {
+      "type": "features",
+      "title": "Who needs to find the eMudhra certificates",
+      "items": [
+        {
+          "title": "OT and embedded teams",
+          "text": "Devices and the VMs that run them carry their own trust stores, and many of them never check revocation. Surveyor OT Pro reads their disk images and firmware on an air-gapped machine, and nothing leaves that machine."
+        },
+        {
+          "title": "Application and platform teams",
+          "text": "Container images and applications often bundle their own CA certificates. Surveyor IT Pro sweeps your artifact repository and lists every certificate each package carries."
+        },
+        {
+          "title": "Security leaders",
+          "text": "When a certificate authority is distrusted, the first question is which of your systems are affected. A CBOM of everything you run answers it with a list you can act on."
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "title": "Why Surveyor for certificate discovery",
+      "items": [
+        {
+          "title": "From the artifact itself",
+          "text": "Surveyor reads the built software, so it finds certificates in vendor images and third-party software as well as in your own code. It needs no source code and no agent on the device."
+        },
+        {
+          "title": "Nothing leaves your machine",
+          "text": "Surveyor OT Pro and Surveyor IT Pro run air-gapped. They check their license offline, and your images and CBOMs stay on the machine you run them on."
+        },
+        {
+          "title": "Ready for the next one",
+          "text": "Keep a CBOM of everything you run, and the next distrusted certificate is a search for one more fingerprint."
+        }
+      ]
+    },
+    {
+      "type": "cta-band",
+      "title": "Where’s your cert?",
+      "body": "Tell us what you run, and we’ll help you find the eMudhra certificates in it. Reporters covering the eMudhra distrust can reach us the same way.",
+      "cta": { "label": "Talk to us", "url": "mailto:sales@spicelabs.io" }
+    },
+    {
+      "type": "resources",
+      "items": [
+        {
+          "title": "Surveyor OT Pro finds the distrusted eMudhra certificates",
+          "type": "Video",
+          "url": "https://www.youtube.com/watch?v=FuH4BdkyLW0"
+        },
+        {
+          "title": "How Chrome and Android blocked the eMudhra intermediates",
+          "type": "Google",
+          "url": "https://blog.google/security/protecting-chrome-and-android-users-from-compromised-emudhra-intermediate-ca-certificates/"
+        },
+        {
+          "title": "Eight eMudhra CA keys compromised: the full timeline",
+          "type": "News",
+          "url": "https://thehackernews.com/2026/10/eight-emudhra-ca-keys-compromised.html"
+        },
+        {
+          "title": "What Cloudflare changed after the eMudhra compromise",
+          "type": "Cloudflare",
+          "url": "https://blog.cloudflare.com/emudhra-certificate-compromise"
+        },
+        {
+          "title": "Cryptographic bills of materials are now a federal requirement",
+          "type": "News",
+          "url": "https://fedtechmagazine.com/article/2026/09/cryptographic-bills-materials-are-now-federal-requirement-perfcon"
+        },
+        {
+          "title": "Disk images, containers and the other file types Surveyor reads",
+          "type": "Docs",
+          "url": "https://docs.spicelabs.io/docs/surveyor/supported-file-types/"
+        },
+        {
+          "title": "Your first offline survey with Surveyor OT Pro or Surveyor IT Pro",
+          "type": "Docs",
+          "url": "https://docs.spicelabs.io/docs/get-started/offline-first-survey/"
+        },
+        {
+          "title": "Check whether your client still trusts the eMudhra certificates",
+          "type": "Tool",
+          "url": "https://emudhra.we-have-a-problem.com/"
+        }
+      ]
+    }
+  ],
+  "footer_links": [
+    { "label": "Contact", "url": "mailto:sales@spicelabs.io" },
+    { "label": "Documentation", "url": "https://docs.spicelabs.io" },
+    { "label": "Blog", "url": "https://blog.spicelabs.io" },
+    { "label": "Privacy Policy", "url": "https://documents.spicelabs.io/privacy/" },
+    { "label": "Terms of Service", "url": "https://documents.spicelabs.io/terms/" }
+  ],
+  "footer_text": "© 2026 Spice Labs, Inc. All rights reserved."
+}
